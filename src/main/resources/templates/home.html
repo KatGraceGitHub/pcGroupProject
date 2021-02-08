@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Hobbies</title>
+    <link href="/css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="center" id="mainDiv">
+    <h3  id="header"> Welcome to the Team Home Page</h3>
+    <img  src="../image/KatrinaSchmidt.jpg" alt="Picture of me" style="width: 30%">
+    <ul>
+        <li>I love coding</li>
+        <li>I really enjoy drawing and painting</li>
+        <li>Hard worker</li>
+        <li>Enjoys short walks along the beach cus I'm lazy haha</li>
+        <li>Loves animals</li>
+    </ul>
+
+    <p>Welcome Win Kat and Alex to your homepage. Our team is called AWK, it's a clever name that takes the first letter of all our first names. We're also in a capstone group together and have known each other since first year. Welcome to this page team members and feel free to learn more about this team!! </p>
+    <video width="320" height="240" controls>
+        <source src="/video/AWK_A1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!--
+    <h3> <span th:text="${welcome}"> </span></h3>
+-->
+    <a class="memberLink" th:href="@{/member/members}">Next Page - Member List View</a>
+
+</div>
+
+</body>
+</html>

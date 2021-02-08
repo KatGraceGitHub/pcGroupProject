@@ -1,0 +1,134 @@
+
+table {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 80%;
+    heigh: 80%;
+}
+
+td, th {
+    border: 1px solid #4E5126;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #99A3A4;}
+
+tr:hover {background-color: #cfcbf5 ;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #BDC3C7;
+    color: white;
+    width:100px;
+}
+
+body {
+    background-color:lightgray;
+    font-size: 1.3em;
+    font-family: calluna, Calluna, Georgia;
+    font-weight: 300;
+    line-height: 1.55em;
+    padding: 0 2em;
+    text-rendering: optimizeLegibility;
+    color: #555;
+}
+
+img{
+    border: 2px solid darkslategrey;
+    padding: 20px;
+    float: left;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#mainDiv{
+    border: 8px solid #b5b5b5;
+    overflow:hidden;
+    padding: 20px;
+    position: relative;
+}
+
+
+
+ul{
+    float:right;
+}
+
+#header{
+    text-align: center;
+}
+h2 {
+    font-family: sans-serif;
+    font-size: 1.0em;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 0.8em;
+    display: block;
+    padding: 20px;
+    float: left;
+}
+
+.memberLink{
+    display: block;
+    padding: 20px;
+    float: left;
+}
+
+video{
+    display: block;
+    padding: 20px;
+    float: left;
+}
+
+
+input[type='text'] {
+    font-size: 24px;
+    maxlength: 3em;
+    size:700px;
+}
+
+button {
+    background-color: #9FE2BF;
+    border: 1.5em;
+    color: #17202A;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/*button, a, href {*/
+/*  background-color: #9FE2BF;*/
+/*  border: 1.5em;*/
+/*  color: #17202A;*/
+/*  padding: 15px 32px;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  display: inline-block;*/
+/*  font-size: 16px;*/
+/*}*/
+
+.button {
+    background-color: #9FE2BF;
+    border: 1.5em;
+    color: #17202A;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
