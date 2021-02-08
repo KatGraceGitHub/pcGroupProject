@@ -1,60 +1,32 @@
 package jee3060.design.service;
 
-
 import jee3060.design.model.Member;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.PostConstruct;
 
-@Slf4j
-@Service
-public class MemberInitialization implements MemberService{
-    private static List<Member> members = new ArrayList<>();
+@Component
+public class MemberInitialization {
+    @Autowired
+    MemberService memberService;
 
-    @Override
-    public List<Member> findAll() {
-        return members;
-    }
+    int[] ids = {101, 102, 103};
+    String[] firstNames = {"Kat", "Win", "Alex"};
+    String[] lastNames = {"Schmidt", "Chhor", "Steinberg"};
+    String[] emails = {"kschmidt1305@conestogac.on.ca", "wchhor9294@conestogac.on.ca", "asteinberg5935@conestogac.on.ca"};
 
-    @Override
-    public synchronized void create(Member member) {
-        member.setMemberId(nextKey());
-        members.add(member);
-    }
 
-    @Override
-    public void save(Member member) {
-        for (Member existingMember: members) {
-            if (member.getMemberId() == existingMember.getMemberId()) {
-                members.remove(existingMember);
-                break;
-            }
+    @PostConstruct
+    public void initialize() {
+        for (int i = 0; i < ids.length; i++) {
+            Member member = new Member();
+            member.setMemberId(ids[i]);
+            member.setFirstName(firstNames[i]);
+            member.setLastName(lastNames[i]);
+            member.setEmail(emails[i]);
+
+            memberService.create(member);
         }
-        members.add(member);
-    }
-
-
-    @Override
-    public synchronized int nextKey() {
-        int base=0, nextId = 0;
-        if (members.size() > 0) {
-            nextId = members.stream().mapToInt(t -> t.getMemberId()).max().getAsInt();
-        } else {
-            base = 1000;
-        }
-        nextId += base;
-        nextId++;
-        log.info ("<><><><><><> key = " + nextId);
-        return nextId;
     }
 }
-
-
-
-
-
-
-
-
