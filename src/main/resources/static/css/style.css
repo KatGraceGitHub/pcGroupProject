@@ -3,7 +3,8 @@ table {
     font-family: Arial;
     border-collapse: collapse;
     width: 100%;
-    heigh: 80%;
+    height: 80%;
+    table-layout: fixed;
 }
 
 td, th {
@@ -36,8 +37,7 @@ body {
 }
 
 img{
-    border: 2px solid darkslategrey;
-    padding: 20px;
+    border: 4px solid darkslategrey;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -56,10 +56,12 @@ img{
     position: relative;
 }
 
-
-
 ul{
     float:left;
+}
+
+li {
+    font-size: 15px;
 }
 
 #header{
@@ -133,4 +135,3 @@ button {
     display: inline-block;
     font-size: 16px;
 }
-
