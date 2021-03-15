@@ -1,4 +1,4 @@
 package jee3060.design.repository;
 
-public interface memberRepository {
+public interface HobbyRep {
 }
