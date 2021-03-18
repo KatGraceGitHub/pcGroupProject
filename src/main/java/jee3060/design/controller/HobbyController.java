@@ -1,7 +1,7 @@
 package jee3060.design.controller;
 
 import jee3060.design.model.Hobby;
-import jee3060.design.service.HobbyService;
+import jee3060.design.repository.HobbyRep;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,17 +9,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Slf4j
 @Controller
 @RequestMapping("/hobby")
 public class HobbyController {
     @Autowired
-    HobbyService hobbyService;
+    HobbyRep hobbyRep;
 
     @GetMapping("/hobbies")
     public String showAllHobbies(Model model) {
         log.info (" GetMapping showAllInHobbies");
-        model.addAttribute("hobbies", hobbyService.findAll());
+        model.addAttribute("hobbies", hobbyRep.findAll());
         return "hobbies";
     }
 
@@ -27,7 +29,7 @@ public class HobbyController {
     @GetMapping ("/update/{id}")
     public String editHobby (@PathVariable("id") int id, Model model) {
         log.info (" GetMapping editHobby");
-        Hobby hobby = hobbyService.findById(id);
+        Hobby hobby = hobbyRep.findById(id).get();
         model.addAttribute("hobby", hobby);
         return "updateHobby";
     }
@@ -35,11 +37,12 @@ public class HobbyController {
     @PostMapping("/update/{id}")
     public String updateHobby (@PathVariable("id") int id, @ModelAttribute("hobby") Hobby hobby, Model model) {
         log.info (" GetMapping editHobby");
-        Hobby hobbyU = hobbyService.findById(id);
+        Hobby hobbyU = hobbyRep.findById(id).get();
         hobbyU.setHobbyId(hobby.getHobbyId());
         hobbyU.setHobbyDescription(hobby.getHobbyDescription());
         hobbyU.setHobbyCategory(hobby.getHobbyCategory());
         hobbyU.setHobbyName(hobby.getHobbyName());
+        hobbyRep.save(hobbyU);
         model.addAttribute("hobby", hobby);
         return "redirect:/hobby/hobbies";
     }
@@ -48,7 +51,7 @@ public class HobbyController {
     public String addHobby (Model model) {
         log.info (" GetMapping addHobby");
         Hobby hobby = new Hobby();
-        hobby.setHobbyId(hobbyService.nextKey());
+        //hobby.setHobbyId(hobbyRep.nextKey());
         model.addAttribute("hobby", hobby);
         return "addHobby";
     }
@@ -56,14 +59,14 @@ public class HobbyController {
     @PostMapping("/add")
     public String addNewHobby (@ModelAttribute ("") Hobby hobby) {
         log.info (" GetMapping addNewHobby");
-        hobbyService.create(hobby);
+        hobbyRep.save(hobby);
         return "redirect:/hobby/hobbies";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteHobby (@PathVariable ("id") int id) {
         log.info (" GetMapping delete hobby");
-        hobbyService.deleteById(id);
+        hobbyRep.deleteById(id);
         return "redirect:/hobby/hobbies";
     }
 

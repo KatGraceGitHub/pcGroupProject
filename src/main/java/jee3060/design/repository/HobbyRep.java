@@ -1,4 +1,10 @@
 package jee3060.design.repository;
 
-public interface HobbyRep {
+import jee3060.design.model.Hobby;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface HobbyRep extends CrudRepository<Hobby, Integer> {
+
 }

@@ -12,10 +12,7 @@
 
 <form th:object="${hobby}" th:action="@{/hobby/update/{id}(id=${hobby.hobbyId})}" method="post">
     <table>
-        <tr>
-            <td>Hobby Id:</td>
-            <td><input type="text" th:field="*{hobbyId}" /></td>
-        </tr>
+        <input type="hidden" th:field="*{hobbyId}" />
         <tr>
             <td>Name:</td>
             <td><input type="text" required="required" th:field="*{hobbyName}" /></td>

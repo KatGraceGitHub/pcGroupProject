@@ -12,10 +12,6 @@
     <form th:object="${hobby}" th:action="@{/hobby/add}" method="post">
         <table>
             <tr>
-                <td>Member Id:</td>
-                <td><input  type="text" th:field="*{hobbyId}" /></td>
-            </tr>
-            <tr>
                 <td>Hobby Name:</td>
                 <td><input type="text" required="required" th:field="*{hobbyName}" /></td>
             </tr>
