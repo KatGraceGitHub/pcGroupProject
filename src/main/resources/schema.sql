@@ -4,14 +4,15 @@ CREATE DATABASE jee3060;
 
 USE jee3060;
 
-CREATE TABLE hobby (
+CREATE TABLE hobby
+(
 
-                       hobbyid INT AUTO_INCREMENT PRIMARY KEY,
+    hobbyid       INT AUTO_INCREMENT PRIMARY KEY,
 
-                       hobbyname VARCHAR (50),
+    hobbyname     VARCHAR(50),
 
-                       hobbyoptional VARCHAR(50) NULL,
+    hobbyoptional VARCHAR(50) NULL,
 
-                       hobbydesc VARCHAR (500)
+    hobbydesc     VARCHAR(500)
 
 );

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @Value("${my.name}")
     private String name;
+
     @GetMapping
     public String showHomePage(Model model) {
         model.addAttribute("welcome", name);

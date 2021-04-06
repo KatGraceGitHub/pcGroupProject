@@ -20,23 +20,23 @@ public class HobbyController {
 
     @GetMapping("/hobbies")
     public String showAllHobbies(Model model) {
-        log.info (" GetMapping showAllInHobbies");
+        log.info(" GetMapping showAllInHobbies");
         model.addAttribute("hobbies", hobbyRep.findAll());
         return "hobbies";
     }
 
 
-    @GetMapping ("/update/{id}")
-    public String editHobby (@PathVariable("id") int id, Model model) {
-        log.info (" GetMapping editHobby");
+    @GetMapping("/update/{id}")
+    public String editHobby(@PathVariable("id") int id, Model model) {
+        log.info(" GetMapping editHobby");
         Hobby hobby = hobbyRep.findById(id).get();
         model.addAttribute("hobby", hobby);
         return "updateHobby";
     }
 
     @PostMapping("/update/{id}")
-    public String updateHobby (@PathVariable("id") int id, @ModelAttribute("hobby") Hobby hobby, Model model) {
-        log.info (" GetMapping editHobby");
+    public String updateHobby(@PathVariable("id") int id, @ModelAttribute("hobby") Hobby hobby, Model model) {
+        log.info(" GetMapping editHobby");
         Hobby hobbyU = hobbyRep.findById(id).get();
         hobbyU.setHobbyId(hobby.getHobbyId());
         hobbyU.setHobbyDescription(hobby.getHobbyDescription());
@@ -47,9 +47,9 @@ public class HobbyController {
         return "redirect:/hobby/hobbies";
     }
 
-    @GetMapping ("/add")
-    public String addHobby (Model model) {
-        log.info (" GetMapping addHobby");
+    @GetMapping("/add")
+    public String addHobby(Model model) {
+        log.info(" GetMapping addHobby");
         Hobby hobby = new Hobby();
         //hobby.setHobbyId(hobbyRep.nextKey());
         model.addAttribute("hobby", hobby);
@@ -57,15 +57,15 @@ public class HobbyController {
     }
 
     @PostMapping("/add")
-    public String addNewHobby (@ModelAttribute ("") Hobby hobby) {
-        log.info (" GetMapping addNewHobby");
+    public String addNewHobby(@ModelAttribute("") Hobby hobby) {
+        log.info(" GetMapping addNewHobby");
         hobbyRep.save(hobby);
         return "redirect:/hobby/hobbies";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteHobby (@PathVariable ("id") int id) {
-        log.info (" GetMapping delete hobby");
+    public String deleteHobby(@PathVariable("id") int id) {
+        log.info(" GetMapping delete hobby");
         hobbyRep.deleteById(id);
         return "redirect:/hobby/hobbies";
     }

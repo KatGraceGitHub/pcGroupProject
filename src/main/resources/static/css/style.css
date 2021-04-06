@@ -12,9 +12,13 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #99A3A4;}
+tr:nth-child(even) {
+    background-color: #99A3A4;
+}
 
-tr:hover {background-color: #cfcbf5 ;}
+tr:hover {
+    background-color: #cfcbf5;
+}
 
 th {
     padding-top: 12px;
@@ -22,9 +26,8 @@ th {
     text-align: left;
     background-color: #BDC3C7;
     color: white;
-    width:100px;
+    width: 100px;
 }
-
 
 
 .addMemberTable table {
@@ -41,9 +44,13 @@ th {
     padding: 8px;
 }
 
-.addMemberTable tr:nth-child(even){background-color: #99A3A4;}
+.addMemberTable tr:nth-child(even) {
+    background-color: #99A3A4;
+}
 
-.addMemberTable tr:hover {background-color: #cfcbf5 ;}
+.addMemberTable tr:hover {
+    background-color: #cfcbf5;
+}
 
 .addMemberTable th {
     padding-top: 12px;
@@ -51,12 +58,12 @@ th {
     text-align: left;
     background-color: #BDC3C7;
     color: white;
-    width:100px;
+    width: 100px;
 }
 
 
 body {
-    background-color:lightgray;
+    background-color: lightgray;
     font-size: 1.3em;
     font-family: calluna, Calluna, Georgia;
     font-weight: 300;
@@ -66,12 +73,13 @@ body {
     color: #555;
 }
 
-img{
+img {
     border: 4px solid darkslategrey;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
 .center {
     display: block;
     margin-left: auto;
@@ -79,24 +87,25 @@ img{
     width: 50%;
 }
 
-#mainDiv{
+#mainDiv {
     border: 8px solid #b5b5b5;
-    overflow:hidden;
+    overflow: hidden;
     padding: 20px;
     position: relative;
 }
 
-ul{
-    float:left;
+ul {
+    float: left;
 }
 
 li {
     font-size: 15px;
 }
 
-#header{
+#header {
     text-align: center;
 }
+
 h2 {
     font-family: sans-serif;
     font-size: 1.0em;
@@ -114,13 +123,13 @@ p {
     float: left;
 }
 
-.memberLink{
+.memberLink {
     display: block;
     padding: 20px;
     float: left;
 }
 
-video{
+video {
     display: block;
     padding: 20px;
     float: left;
@@ -130,7 +139,7 @@ video{
 input[type='text'] {
     font-size: 24px;
     maxlength: 3em;
-    size:700px;
+    size: 700px;
 }
 
 button {

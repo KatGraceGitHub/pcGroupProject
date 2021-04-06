@@ -10,7 +10,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class MemberMemory implements MemberService{
+public class MemberMemory implements MemberService {
     private static List<Member> members = new ArrayList<>();
 
     @Override
@@ -26,7 +26,7 @@ public class MemberMemory implements MemberService{
 
     @Override
     public void save(Member member) {
-        for (Member existingMember: members) {
+        for (Member existingMember : members) {
             if (member.getMemberId() == existingMember.getMemberId()) {
                 members.remove(existingMember);
                 break;
@@ -37,7 +37,7 @@ public class MemberMemory implements MemberService{
 
     @Override
     public synchronized int nextKey() {
-        int base=0, nextId = 0;
+        int base = 0, nextId = 0;
         if (members.size() > 0) {
             nextId = members.stream().mapToInt(t -> t.getMemberId()).max().getAsInt();
         } else {
@@ -45,7 +45,7 @@ public class MemberMemory implements MemberService{
         }
         nextId += base;
         nextId++;
-        log.info ("<><><><><><> key = " + nextId);
+        log.info("<><><><><><> key = " + nextId);
         return nextId;
     }
 }

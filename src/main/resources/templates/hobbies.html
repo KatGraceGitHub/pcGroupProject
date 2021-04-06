@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My hobbies</title>
-    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -13,12 +13,12 @@
     <h2>
         <a href="/hobby/add"> Add a Hobby</a>
     </h2>
-    <br />
+    <br/>
     <div class="addMemberTable">
-        <table  border="1">
+        <table border="1">
             <thead>
             <tr style="font-weight: bold;">
-                <td >Hobby ID</td>
+                <td>Hobby ID</td>
                 <td>Hobby Name</td>
                 <td>Hobby Description</td>
                 <td>Hobby Category</td>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
             <tr th:each="hobby: ${hobbies}">
-                <td  th:text="${hobby.hobbyId}"></td>
+                <td th:text="${hobby.hobbyId}"></td>
                 <td th:text="${hobby.hobbyName}"></td>
                 <td th:text="${hobby.hobbyDescription}"></td>
                 <td th:text="${hobby.hobbyCategory}"></td>

@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Hobby implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "hobbyid")
     private int hobbyId;
     @Column(name = "hobbyname")
@@ -24,18 +24,23 @@ public class Hobby implements Serializable {
     public int getHobbyId() {
         return hobbyId;
     }
+
     public void setHobbyId(int hobbyId) {
         this.hobbyId = hobbyId;
     }
+
     public String getHobbyName() {
         return hobbyName;
     }
+
     public void setHobbyName(String hobbyName) {
         this.hobbyName = hobbyName;
     }
+
     public String getHobbyCategory() {
         return hobbyCategory;
     }
+
     public void setHobbyCategory(String hobbyCategory) {
         this.hobbyCategory = hobbyCategory;
     }
@@ -43,6 +48,7 @@ public class Hobby implements Serializable {
     public String getHobbyDescription() {
         return hobbyDescription;
     }
+
     public void setHobbyDescription(String hobbyDescription) {
         this.hobbyDescription = hobbyDescription;
     }

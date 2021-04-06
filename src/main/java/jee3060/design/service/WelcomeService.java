@@ -10,7 +10,7 @@ public class WelcomeService {
     private String name;
 
 
-    public String welcomeMessage () {
+    public String welcomeMessage() {
         return "Welcome to Spring project, " + name + "!";
     }
 }
